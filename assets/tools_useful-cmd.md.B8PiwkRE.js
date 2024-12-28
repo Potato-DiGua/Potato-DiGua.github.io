@@ -1,0 +1,82 @@
+import{_ as a,c as n,a4 as p,o as i}from"./chunks/framework.Dkk_5NfD.js";const k=JSON.parse('{"title":"实用命令","description":"","frontmatter":{},"headers":[],"relativePath":"tools/useful-cmd.md","filePath":"tools/实用命令___useful-cmd.md","lastUpdated":1735400400000}'),l={name:"tools/useful-cmd.md"};function e(t,s,c,h,d,o){return i(),n("div",null,s[0]||(s[0]=[p(`<h1 id="实用命令" tabindex="-1">实用命令 <a class="header-anchor" href="#实用命令" aria-label="Permalink to &quot;实用命令&quot;">​</a></h1><ul><li><a href="#实用命令">实用命令</a><ul><li><a href="#mklink">mklink</a></li><li><a href="#快速启http服务">快速启http服务</a></li><li><a href="#合并视频和音频">合并视频和音频</a></li><li><a href="#windows备份">windows备份</a></li></ul></li></ul><h2 id="mklink" tabindex="-1">mklink <a class="header-anchor" href="#mklink" aria-label="Permalink to &quot;mklink&quot;">​</a></h2><p>创建软连接(c盘控件不足的时候可以使用)</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>MKLINK [[/D] | [/H] | [/J]] Link Target</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        /D      创建目录符号链接。默认为文件</span></span>
+<span class="line"><span>                符号链接。</span></span>
+<span class="line"><span>        /H      创建硬链接而非符号链接。</span></span>
+<span class="line"><span>        /J      创建目录联接。</span></span>
+<span class="line"><span>        Link    指定新的符号链接名称。</span></span>
+<span class="line"><span>        Target  指定新链接引用的路径</span></span>
+<span class="line"><span>                (相对或绝对)。</span></span></code></pre></div><div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 创建D:\\Android\\.gradle的软链接C:\\Users\\86543\\.gradle</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">mklink</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;C:\\Users\\86543\\.gradle&quot;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;D:\\Android\\.gradle&quot;</span></span></code></pre></div><h2 id="快速启http服务" tabindex="-1">快速启http服务 <a class="header-anchor" href="#快速启http服务" aria-label="Permalink to &quot;快速启http服务&quot;">​</a></h2><p>需要安装python环境</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>usage: server.py [-h] [--cgi] [--bind ADDRESS] [--directory DIRECTORY] [port]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>positional arguments:</span></span>
+<span class="line"><span>  port                  Specify alternate port [default: 8000]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>optional arguments:</span></span>
+<span class="line"><span>  -h, --help            show this help message and exit</span></span>
+<span class="line"><span>  --cgi                 Run as CGI Server</span></span>
+<span class="line"><span>  --bind ADDRESS, -b ADDRESS</span></span>
+<span class="line"><span>                        Specify alternate bind address [default: all interfaces]</span></span>
+<span class="line"><span>  --directory DIRECTORY, -d DIRECTORY</span></span>
+<span class="line"><span>                        Specify alternative directory [default:current directory]</span></span></code></pre></div><div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 以./temp为根目录启动端口为10086的http服务</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">python</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -m</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> http.server</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 10086</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --directory</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> ./temp</span></span></code></pre></div><h2 id="合并视频和音频" tabindex="-1">合并视频和音频 <a class="header-anchor" href="#合并视频和音频" aria-label="Permalink to &quot;合并视频和音频&quot;">​</a></h2><div class="language-shell vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 复制音轨和视频轨进行合成</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">ffmpeg</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> video.mp4</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> audio.mp4</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -vcodec</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> copy</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -acodec</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> copy</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> output.mp4</span></span></code></pre></div><h2 id="windows备份" tabindex="-1">windows备份 <a class="header-anchor" href="#windows备份" aria-label="Permalink to &quot;windows备份&quot;">​</a></h2><div class="language-shell vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">xcopy</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;C:\\source\\path&quot;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">   &quot;I:\\target\\path</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\\&quot;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /E/D/Y</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>复制文件和目录树。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>XCOPY source [destination] [/A | /M] [/D[:date]] [/P] [/S [/E]] [/V] [/W]</span></span>
+<span class="line"><span>                           [/C] [/I] [/Q] [/F] [/L] [/G] [/H] [/R] [/T] [/U]</span></span>
+<span class="line"><span>                           [/K] [/N] [/O] [/X] [/Y] [/-Y] [/Z] [/B] [/J]</span></span>
+<span class="line"><span>                           [/EXCLUDE:file1[+file2][+file3]...] [/COMPRESS]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  source       指定要复制的文件。</span></span>
+<span class="line"><span>  destination  指定新文件的位置和/或名称。</span></span>
+<span class="line"><span>  /A           仅复制有存档属性集的文件，</span></span>
+<span class="line"><span>               但不更改属性。</span></span>
+<span class="line"><span>  /M           仅复制有存档属性集的文件，</span></span>
+<span class="line"><span>               并关闭存档属性。</span></span>
+<span class="line"><span>  /D:m-d-y     复制在指定日期或指定日期以后更改的文件。</span></span>
+<span class="line"><span>               如果没有提供日期，则只复制</span></span>
+<span class="line"><span>               源时间比目标时间新的文件。</span></span>
+<span class="line"><span>  /EXCLUDE:file1[+file2][+file3]...</span></span>
+<span class="line"><span>               指定含有字符串的文件列表。每个字符串</span></span>
+<span class="line"><span>               在文件中应位于单独的一行。如果任何</span></span>
+<span class="line"><span>               字符串与复制文件的绝对路径的任何部分相符，</span></span>
+<span class="line"><span>               则排除复制该文件。例如，</span></span>
+<span class="line"><span>               指定如 \\obj\\ 或 .obj 的字符串会分别</span></span>
+<span class="line"><span>               排除目录 obj 下面的所有文件或带有</span></span>
+<span class="line"><span>               .obj 扩展名的所有文件。</span></span>
+<span class="line"><span>  /P           创建每个目标文件之前均进行提示。</span></span>
+<span class="line"><span>  /S           复制目录和子目录，不包括空目录。</span></span>
+<span class="line"><span>  /E           复制目录和子目录，包括空目录。</span></span>
+<span class="line"><span>               与 /S /E 相同。可以用来修改 /T。</span></span>
+<span class="line"><span>  /V           验证每个新文件的大小。</span></span>
+<span class="line"><span>  /W           提示在复制前按键。</span></span>
+<span class="line"><span>  /C           即使有错误，也继续复制。</span></span>
+<span class="line"><span>  /I           如果目标不存在，且要复制多个文件，</span></span>
+<span class="line"><span>               则假定目标必须是目录。</span></span>
+<span class="line"><span>  /Q           复制时不显示文件名。</span></span>
+<span class="line"><span>  /F           复制时显示完整的源文件名和目标文件名。</span></span>
+<span class="line"><span>  /L           显示要复制的文件。</span></span>
+<span class="line"><span>  /G           允许将加密文件复制到</span></span>
+<span class="line"><span>               不支持加密的目标。</span></span>
+<span class="line"><span>  /H           隐藏文件和系统文件也会复制。</span></span>
+<span class="line"><span>  /R           覆盖只读文件。</span></span>
+<span class="line"><span>  /T           创建目录结构，但不复制文件。不</span></span>
+<span class="line"><span>               包括空目录或子目录。/T /E 包括</span></span>
+<span class="line"><span>               空目录和子目录。</span></span>
+<span class="line"><span>  /U           只复制已经存在于目标中的文件。</span></span>
+<span class="line"><span>  /K           复制属性。一般的 Xcopy 会重置只读属性。</span></span>
+<span class="line"><span>  /N           用生成的短名称复制。</span></span>
+<span class="line"><span>  /O           复制文件所有权和 ACL 信息。</span></span>
+<span class="line"><span>  /X           复制文件审核设置(隐含 /O)。</span></span>
+<span class="line"><span>  /Y           取消提示以确认要覆盖</span></span>
+<span class="line"><span>               现有目标文件。</span></span>
+<span class="line"><span>  /-Y          触发提示，以确认要覆盖</span></span>
+<span class="line"><span>               现有目标文件。</span></span>
+<span class="line"><span>  /Z           在可重新启动模式下复制网络文件。</span></span>
+<span class="line"><span>  /B           复制符号链接本身与链接目标。</span></span>
+<span class="line"><span>  /J           复制时不使用缓冲的 I/O。推荐复制大文件时使用。</span></span>
+<span class="line"><span>  /COMPRESS    如果适用，在传输期间请求网络</span></span>
+<span class="line"><span>               压缩。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>开关 /Y 可以预先在 COPYCMD 环境变量中设置。</span></span>
+<span class="line"><span>这可能被命令行上的 /-Y 覆盖。</span></span></code></pre></div>`,15)]))}const g=a(l,[["render",e]]);export{k as __pageData,g as default};
